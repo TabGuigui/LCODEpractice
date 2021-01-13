@@ -6,6 +6,27 @@ Time             :2021/01/08 16:58:37
 Author           :tab gui
 Version          :1.0
 '''
+
+# 1题
+# 暴力法
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
+# hashmap
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
+        for i in range(len(nums)):
+            if hashmap.get(target - nums[i]) is not None: # 返回对应的索引
+                return [i, hashmap.get(target - nums[i])]
+            else:
+                hashmap[nums[i]] = i
+
+                
+                
 # 动态规划部分
 
 # 72题
